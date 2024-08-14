@@ -1,6 +1,7 @@
 from transformers import BertTokenizer, BertModel
 from sklearn.cluster import DBSCAN
-import torch, math, pandas
+from sklearn.decomposition import PCA
+import torch, math, pandas, numpy
 
 class Fmp_Bert:
     def __init__(self, model_name:str, file_path:str):
@@ -28,10 +29,18 @@ class Fmp_Bert:
                 else:
                     self.embeddings[sw].append(emb)
     
-    def cluster(self, min, brake):
+    def cluster(self, min, brake, pca):
         for sw in self.embeddings.keys():
             if len(self.embeddings[sw]) >= min:
-                df_embedding = pandas.DataFrame(self.embeddings[sw]).T
+                if pca == True:
+                    pca = PCA()
+                    embeddings = pca.fit_transform(self.embeddings[sw])
+                    index = numpy.where(numpy.cumsum(pca.explained_variance_ratio_) >= 0.9)[0][0] + 1
+                    embeddings = embeddings[:index]
+                    df_embedding = pandas.DataFrame(embeddings)
+                else:
+                    df_embedding = pandas.DataFrame(self.embeddings[sw]).T
+
                 best_num_clusters = -1
                 num_clusters = -1
                 e = 0.5

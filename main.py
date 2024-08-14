@@ -11,7 +11,8 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str, default='bert-base-multilingual-cased', help='the name of BERT model you want to use. DEFAULT="bert-base-multilingual-cased"')
     parser.add_argument('--minimum_frequency', type=int, default=10, help='the number of the minimum frequency at which a subword in question needs to occur. DEFAULT=10')
     parser.add_argument('--brake_trials', type=int, default=10, help='the number of trials for which you want to stop the processes if the number pf clusters does not vary. DEFAULT=10')
-    parser.add_argument('--output', type=bool, default=False, help='If True, the probabilities and entropies of each subword of each language will be output.')
+    parser.add_argument('--output', type=bool, default=False, help='If True, the probabilities and entropies of each subword of each language will be output. DEFAULT=False')
+    parser.add_argument('--pca', type=bool, default=False, help='If True, embeddings will be compressed with PCA. DEFAULT=False')
     args = parser.parse_args()
 
     # contain the arguments into the variables 
@@ -21,6 +22,7 @@ if __name__ == '__main__':
     min = args.minimum_frequency
     brake = args.brake_trials
     output = args.output
+    pca = args.pca
 
     # dictionary={language : average_entropy}
     avr_entropies = {}
@@ -36,7 +38,7 @@ if __name__ == '__main__':
         # estimate the number of meanings per subword and calculate the average entropy by using the class(fmpairing_bert.py)
         fmp_bert = Fmp_Bert(model, f'{dir}/{file}')
         fmp_bert.embed()
-        fmp_bert.cluster(min, brake)
+        fmp_bert.cluster(min, brake, pca)
         avr_entropies[file[:-4]] = statistics.mean(fmp_bert.entropy.values())
 
         # record the output (optional)
