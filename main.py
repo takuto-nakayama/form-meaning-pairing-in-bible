@@ -25,6 +25,10 @@ if __name__ == '__main__':
     # dictionary={language : average_entropy}
     avr_entropies = {}
 
+    # create the directory that will store the result
+    if 'results' not in os.listdir(os.getcwd):
+        os.mkdir('results')
+
     # load the files 
     files = os.listdir(dir)
     for file in files:
