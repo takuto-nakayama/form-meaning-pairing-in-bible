@@ -11,7 +11,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str, default='bert-base-multilingual-cased', help='the name of BERT model you want to use. DEFAULT="bert-base-multilingual-cased"')
     parser.add_argument('--minimum_frequency', type=int, default=10, help='the number of the minimum frequency at which a subword in question needs to occur. DEFAULT=10')
     parser.add_argument('--brake_trials', type=int, default=10, help='the number of trials for which you want to stop the processes if the number pf clusters does not vary. DEFAULT=10')
-    parser.add_argument('--output', type=bool, default=True, help='If True, the probabilities and entropies of each subword of each language will be output. DEFAULT=False')
+    parser.add_argument('--output', type=bool, default=True, help='If True, the probabilities and entropies of each subword of each language will be output. DEFAULT=True')
     parser.add_argument('--pca', type=bool, default=False, help='If True, embeddings will be compressed with PCA. DEFAULT=False')
     args = parser.parse_args()
 
