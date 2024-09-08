@@ -6,7 +6,7 @@ This project aims to measure the overall complexity of languages:
 (ii) based on a linguistic unit that does not depend on any given languages.
 The project used [Multilingual Bible Corpus](https://christos-c.com/bible/) as the dataset, and [multilingual BERT model](https://huggingface.co/google-bert/bert-base-multilingual-cased) as the model.<br>
 The 41 languages used in the project are ones with a complete text of the Bible included by both the corpus and the model:<br>
-Albanian, Afrikaans, Arabic, Bulgarian, Cebuano, Croatian, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Korean, Latin, Lithuanian, Malagasy, Malayalam, Marathi, Nepali, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Tagalog, Telugu, Turkish, Vietnamese.
+Albanian, Afrikaans, Arabic, Bulgarian, Cebuano, Croatian, Czech, Danish, Dutch, English, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Korean, Latin, Lithuanian, Malagasy, Malayalam, Marathi, Nepali, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Tagalog, Telugu, Turkish, and Vietnamese.
 
 ## Procedure
 1. Tokenizing an input dataset into subwords.<br>
