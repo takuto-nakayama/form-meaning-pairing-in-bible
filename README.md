@@ -7,9 +7,11 @@ This project aims to measure the overall complexity of languages:
 The project used [Multilingual Bible Corpus](https://christos-c.com/bible/) as the dataset, and bert [multilingual BERT model](https://huggingface.co/google-bert/bert-base-multilingual-cased).
 
 ## Procedure
-1. Tokenizing an input dataset into subwords.
+1. Tokenizing an input dataset into subwords.<br>
+   (defalu subword is WordPiece)
 2. Embedding each subword.
-3. Clustering<br>(default clustering method is DBSCAN)
+3. Clustering<br>
+   (default clustering method is DBSCAN)
 4. Computing Shannon entropy.
 5. Visualizing the result with a scatter plot.
 
