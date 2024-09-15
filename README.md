@@ -20,9 +20,9 @@ Albanian, Afrikaans, Arabic, Bulgarian, Cebuano, Croatian, Czech, Danish, Dutch,
 ## How to Run
 The command below is the simplest form:
 ```
-$ python main.py id data-directory
+$ python main.py [id] [data-directory]
 ```
-, in which `id` refers to the name of directory in which the result will be stored, and `data-directory` to the name of directory that contains a data you want to use.<br>
+, in which `[id]` refers to the name of directory in which the result will be stored, and `[data-directory]` to the name of directory that contains a data you want to use.<br>
 Data must be a plain text and each line corresponds to a sentence or another kinds of set of linguistic units that represents a context for each word or subword.
 
 options are the below:
