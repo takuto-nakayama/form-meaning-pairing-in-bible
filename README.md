@@ -1,4 +1,4 @@
-# Form Meaning Pairing with BERT
+# Form Meaning Pairing in Bible
 
 ## Overview
 This project aims to measure the overall complexity of languages:
